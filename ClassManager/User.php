@@ -103,5 +103,17 @@ class Usuario {
             }
         }
     }
+
+    public function delete() {
+        $sql = "DELETE FROM $this->table WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($this->id));
+
+        if($stmt->rowCount() > 0) {
+                echo 'Deletado';
+            } else {
+                echo 'Não Deletado';
+            }
+    }
 }
 ?>
