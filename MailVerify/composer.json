@@ -1,0 +1,20 @@
+{
+  "name": "luizr/mail-verify",
+  "autoload": {
+    "psr-4": {
+      "config\\": "config"
+    },
+    "files": [
+      "config/sendMail.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Luiz R.",
+      "email": "luizroberto44630@gmail.com"
+    }
+  ],
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  }
+}
