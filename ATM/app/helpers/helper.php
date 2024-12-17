@@ -1,6 +1,7 @@
 <?php
 
 use app\routes\Route;
+use app\views\View;
 
 function routeExecutor()
 {
@@ -11,10 +12,20 @@ function routeExecutor()
         $routesArray = require dirname(__DIR__).'/routes/routes.php';
         $routeObj->executor($routesArray);
 
-        // return $routeObj;
-
     }catch(Throwable $th){
         var_dump($th->getMessage());
+    }
+
+}
+
+function viewExecutor(string $view, array $data = [])
+{
+    try{
+        $viewObj = new View;
+        echo $viewObj->executor($view, $data);
+    }
+    catch(Throwable $th){
+        dd($th->getMessage());
     }
 
 }
